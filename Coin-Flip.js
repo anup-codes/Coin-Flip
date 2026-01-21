@@ -1,14 +1,15 @@
+let result = '' ;
 function coinFlip(){
   const randomNumber = Math.random();
   let coinside = '';
   if (randomNumber < 0.5) {
   coinside = 'HEADS';
-  alert(`You flipped ${coinside}`);
-  } else {
+  }
+ else {
   coinside = 'TAILS';
-  alert(`You flipped ${coinside}`);
-  }
-  }
+}
+document.querySelector('.js-result').innerHTML = coinside ;
+}
   const score = JSON.parse(localStorage.getItem('score')) || {
   wins: 0,
   losses: 0 
