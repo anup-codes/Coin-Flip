@@ -10,7 +10,7 @@ function coinFlip(){
 }
 document.querySelector('.js-result').innerHTML = RandCoinside ;
 }
-  const score = JSON.parse(localStorage.getItem('score')) || {
+  const score = {
   wins: 0,
   losses: 0 
 }
@@ -37,11 +37,20 @@ function Guess(userGuess) {
   score.losses += 1;
   }
 
-  localStorage.setItem('score', JSON.stringify(score));
+  // localStorage.setItem('score', JSON.stringify(score));
 
   document.querySelector('.js-guess').innerText =
-    `your choice ${userGuess} and computer choice ${coinside}
-${result}`;
+  `
+  ${result}
+  your choice ${userGuess}
+  and 
+  computer choice ${coinside}
+
+  wins : ${score.wins} 
+  losses : ${score.losses}
+  `;
+
+
 }
 
 
