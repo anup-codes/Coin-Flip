@@ -1,14 +1,14 @@
 let result = '' ;
 function coinFlip(){
   const randomNumber = Math.random();
-  let coinside = '';
+  let RandCoinside = '';
   if (randomNumber < 0.5) {
-  coinside = 'HEADS';
+ RandCoinside = 'HEADS';
   }
  else {
-  coinside = 'TAILS';
+  RandCoinside = 'TAILS';
 }
-document.querySelector('.js-result').innerHTML = coinside ;
+document.querySelector('.js-result').innerHTML = RandCoinside ;
 }
   const score = JSON.parse(localStorage.getItem('score')) || {
   wins: 0,
@@ -39,6 +39,9 @@ function Guess(userGuess) {
 
   localStorage.setItem('score', JSON.stringify(score));
 
-  alert(`${result} The coin landed on ${coinside}. You guessed ${userGuess}.
-  Wins: ${score.wins}, Losses: ${score.losses}`) ;
+  document.querySelector('.js-guess').innerText =
+    `your choice ${userGuess} and computer choice ${coinside}
+${result}`;
 }
+
+
