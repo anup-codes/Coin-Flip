@@ -63,3 +63,13 @@ else if (event.key === 't'){
 }
 });
 
+document.querySelector('.js-head-button').addEventListener('click', () => {
+Guess('HEADS');
+});
+document.querySelector('.js-tail-button').addEventListener('click', () => {
+Guess('TAILS');
+});
+
+document.querySelector('.js-flip-button').addEventListener('click', () => {
+ coinFlip();
+});
