@@ -49,8 +49,17 @@ function Guess(userGuess) {
   wins : ${score.wins} 
   losses : ${score.losses}
   `;
-
-
 }
 
+window.addEventListener('keydown', (event) => {
+if (event.key === ' '){
+  coinFlip();
+}
+else if (event.key === 'h'){
+  Guess('HEADS');
+}
+else if (event.key === 't'){
+  Guess('TAILS');
+}
+});
 
